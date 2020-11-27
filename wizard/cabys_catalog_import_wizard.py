@@ -118,7 +118,7 @@ class CabysCatalogImportWizard(models.TransientModel):
                 category = row[products_map['category']].value
                 description = row[products_map['description']].value
                 code = row[products_map['code']].value
-                tax = 0.0 if row[products_map['tax']].value == 'Exento' else float(row[products_map['tax']].value[:-1]) 
+                tax = 0.0 if row[products_map['tax']].value in ('Exento', 'na') else float(row[products_map['tax']].value[:-1])                 
                 all_products[code] = {'name': description, 'codigo': code, 'impuesto': tax, 'cabys_categoria8_id': category}
 
             # sort categories in order to process them orderly
@@ -156,6 +156,10 @@ class CabysCatalogImportWizard(models.TransientModel):
                 record_id = self.env['cabys.producto'].search([('codigo', '=', code)])
                 # if it exist, check differences
                 if record_id:
+                    # check if external id exists, if not, create if
+                    external_id = self.env['ir.model.data'].search([('model', '=', record_id._name), ('res_id', '=', record_id.id)])
+                    if not external_id:
+                        self.env['ir.model.data'].create({'res_id': record_id.id, 'model': record_id._name, 'name': record_id.codigo, 'module': 'cabys'})
                     vals = {}
                     if record_id.name != product['name']:
                         vals['name'] = product['name']
@@ -170,11 +174,13 @@ class CabysCatalogImportWizard(models.TransientModel):
                 # if thereis no record, create it
                 if not record_id:
                     record_id = self.env['cabys.producto'].create(product)
+                    self.env['ir.model.data'].create({'res_id': record_id.id, 'model': record_id._name, 'name': record_id.codigo, 'module': 'cabys'})
                     products_new.append(product['codigo'])
             # product codes in db and not in catalog file should be deleted
             product_codes = list(all_products.keys())
             record_ids = self.env['cabys.producto'].search([('codigo', 'not in', product_codes)])
             products_deleted = record_ids.mapped('codigo')
+            record_ids.unlink()
             _logger.info('Finished updating Cabys catalog')
 
             return  products_new, products_updated,  products_deleted, categories_new, categories_updated, categories_deleted
@@ -280,8 +286,7 @@ class CabysCatalogImportWizard(models.TransientModel):
                 code = row[products_map['code']].value
                 cabys_categoria8_id = row[products_map['category']].value
                 name = row[products_map['description']].value
-                impuesto = 0.0 if row[products_map['tax']].value == 'Exento' else float(row[products_map['tax']].value[:-1]) 
-                
+                impuesto = 0.0 if row[products_map['tax']].value in ('Exento', 'na') else float(row[products_map['tax']].value[:-1])
                 products_codes.append(code)
 
                 # search record
