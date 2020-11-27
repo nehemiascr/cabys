@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-#     info@fakturacion.com
-from odoo import models, fields, api
 import logging
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 

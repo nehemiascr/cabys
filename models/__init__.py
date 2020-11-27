@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Part of Fakturacion. See LICENSE file for full copyright and licensing details.
 
 from . import cabys_categoria1
 from . import cabys_categoria2
