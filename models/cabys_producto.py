@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#     info@fakturacion.com
 from odoo import models, fields, api
 import logging
 
