@@ -33,7 +33,7 @@
                     <field name="codigo"/>
                     <field name="impuesto"/>
                 </group>
-                <group col="4">
+                <group col="2">
                     <field name="cabys_categoria8_id"/>
 					<field name="cabys_categoria7_id"/>
 					<field name="cabys_categoria6_id"/>
