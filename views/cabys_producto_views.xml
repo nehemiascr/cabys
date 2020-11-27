@@ -33,8 +33,8 @@
                     <field name="codigo"/>
                     <field name="impuesto"/>
                 </group>
-                <group col="4">
-                    <field name="cabys_categoria8_id"/>
+				<group col="2">
+					<field name="cabys_categoria8_id"/>
 					<field name="cabys_categoria7_id"/>
 					<field name="cabys_categoria6_id"/>
 					<field name="cabys_categoria5_id"/>
@@ -42,7 +42,7 @@
 					<field name="cabys_categoria3_id"/>
 					<field name="cabys_categoria2_id"/>
 					<field name="cabys_categoria1_id"/>
-                </group>
+				</group>
                 <group col="2">
 					<field name='product_ids' widget="many2many">
 						<tree>
