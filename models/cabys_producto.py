@@ -28,7 +28,6 @@ class CabysProducto(models.Model):
 
     _sql_constraints = [('codigo_uniq', 'unique (codigo)', 'Ya existe un registro con el mismo código.'),]
 
-    @api.multi
     @api.depends('name', 'codigo', 'cabys_categoria8_id', 'cabys_categoria7_id', 'cabys_categoria6_id', 'cabys_categoria5_id')
     def name_get(self):
         result = []
