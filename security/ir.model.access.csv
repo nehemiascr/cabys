@@ -8,7 +8,7 @@ access_cabys_categoria6,access_cabys_categoria6,model_cabys_categoria6,base.grou
 access_cabys_categoria7,access_cabys_categoria7,model_cabys_categoria7,base.group_user,1,0,0,0 
 access_cabys_categoria8,access_cabys_categoria8,model_cabys_categoria8,base.group_user,1,0,0,0 
 access_cabys_producto,access_cabys_producto,model_cabys_producto,base.group_user,1,0,0,0 
-access_cabys_catalog_import_wizard,access_catalog_import_wizard,model_cabys_catalog_import_wizard,base.group_user,1,0,0,0
+
 full_cabys_categoria1,full_cabys_categoria1,model_cabys_categoria1,base.group_system,1,1,1,1 
 full_cabys_categoria2,full_cabys_categoria2,model_cabys_categoria2,base.group_system,1,1,1,1 
 full_cabys_categoria3,full_cabys_categoria3,model_cabys_categoria3,base.group_system,1,1,1,1 
@@ -18,4 +18,3 @@ full_cabys_categoria6,full_cabys_categoria6,model_cabys_categoria6,base.group_sy
 full_cabys_categoria7,full_cabys_categoria7,model_cabys_categoria7,base.group_system,1,1,1,1 
 full_cabys_categoria8,full_cabys_categoria8,model_cabys_categoria8,base.group_system,1,1,1,1 
 full_cabys_producto,full_cabys_producto,model_cabys_producto,base.group_system,1,1,1,1
-access_cabys_catalog_import_wizard,access_catalog_import_wizard,model_cabys_catalog_import_wizard,base.group_system,1,1,1,1
