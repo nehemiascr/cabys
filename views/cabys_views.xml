@@ -81,7 +81,8 @@
 
 				<footer>
 					<field name="button_enable" invisible="1"/>
-					<button string="Importar Catálogo" name="update_catalog" type="object" class="oe_highlight" attrs="{'invisible':[('button_enable','=',False)]}"/>
+					<button string="Importar Catálogo" name="update_catalog" type="object" class="oe_highlight"/>
+					<!-- <button string="Importar Catálogo" name="update_catalog" type="object" class="oe_highlight" attrs="{'invisible':[('button_enable','=',False)]}"/> -->
 					<button string="Cerrar esta ventana" class="btn btn-default" special="cancel"/>
 				</footer>
 			</form>
